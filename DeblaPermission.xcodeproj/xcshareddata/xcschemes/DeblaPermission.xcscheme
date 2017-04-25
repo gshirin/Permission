@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
                BuildableName = "Permission.framework"
-               BlueprintName = "Permission"
-               ReferencedContainer = "container:Permission.xcodeproj">
+               BlueprintName = "DeblaPermission"
+               ReferencedContainer = "container:DeblaPermission.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D86A9BB1BEBDC7D00E3DD5A"
                BuildableName = "Permission.xctest"
-               BlueprintName = "PermissionTests"
-               ReferencedContainer = "container:Permission.xcodeproj">
+               BlueprintName = "DeblaPermissionTests"
+               ReferencedContainer = "container:DeblaPermission.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
             BuildableName = "Permission.framework"
-            BlueprintName = "Permission"
-            ReferencedContainer = "container:Permission.xcodeproj">
+            BlueprintName = "DeblaPermission"
+            ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
             BuildableName = "Permission.framework"
-            BlueprintName = "Permission"
-            ReferencedContainer = "container:Permission.xcodeproj">
+            BlueprintName = "DeblaPermission"
+            ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,8 +84,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
             BuildableName = "Permission.framework"
-            BlueprintName = "Permission"
-            ReferencedContainer = "container:Permission.xcodeproj">
+            BlueprintName = "DeblaPermission"
+            ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

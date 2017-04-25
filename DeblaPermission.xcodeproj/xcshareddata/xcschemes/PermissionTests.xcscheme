@@ -18,8 +18,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D86A9BB1BEBDC7D00E3DD5A"
                BuildableName = "Permission.xctest"
-               BlueprintName = "PermissionTests"
-               ReferencedContainer = "container:Permission.xcodeproj">
+               BlueprintName = "DeblaPermissionTests"
+               ReferencedContainer = "container:DeblaPermission.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

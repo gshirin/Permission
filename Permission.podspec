@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "Permission"
+  s.name         = "DeblaPermission"
   s.version      = "2.0.4"
   s.license      = { :type => "MIT" }
   s.homepage     = "https://github.com/delba/Permission"
