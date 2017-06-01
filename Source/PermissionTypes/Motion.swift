@@ -27,7 +27,7 @@ import CoreMotion
 
 private let MotionManager = CMMotionActivityManager()
 
-extension Permission {
+extension DebPermission {
     var statusMotion: PermissionStatus {
         if UserDefaults.standard.requestedMotion {
             return synchronousStatusMotion

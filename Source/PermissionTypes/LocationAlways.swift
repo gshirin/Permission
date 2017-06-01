@@ -25,7 +25,7 @@
 #if PERMISSION_LOCATION
 import CoreLocation
 
-internal extension Permission {
+internal extension DebPermission {
     var statusLocationAlways: PermissionStatus {
         guard CLLocationManager.locationServicesEnabled() else { return .disabled }
         

@@ -25,7 +25,7 @@
 open class PermissionSet {
     
     /// The permissions in the set.
-    open let permissions: Set<Permission>
+    open let permissions: Set<DebPermission>
     
     /// The delegate of the permission set.
     open weak var delegate: PermissionSetDelegate?
@@ -78,7 +78,7 @@ open class PermissionSet {
      
      - returns: A newly created set.
      */
-    public convenience init(_ permissions: Permission...) {
+    public convenience init(_ permissions: DebPermission...) {
         self.init(permissions: permissions)
     }
     
@@ -89,7 +89,7 @@ open class PermissionSet {
      
      - returns: A newly created set.
      */
-    public convenience init(_ permissions: [Permission]) {
+    public convenience init(_ permissions: [DebPermission]) {
         self.init(permissions: permissions)
     }
     
@@ -99,16 +99,16 @@ open class PermissionSet {
         self.init(permissions: permissions)
     }
     
-    fileprivate init(permissions: [Permission]) {
+    fileprivate init(permissions: [DebPermission]) {
         self.permissions = Set(permissions)
         self.permissions.forEach { $0.permissionSets.append(self) }
     }
     
-    internal func willRequestPermission(_ permission: Permission) {
+    internal func willRequestPermission(_ permission: DebPermission) {
         delegate?.permissionSet(self, willRequestPermission: permission)
     }
     
-    internal func didRequestPermission(_ permission: Permission) {
+    internal func didRequestPermission(_ permission: DebPermission) {
         delegate?.permissionSet(self, didRequestPermission: permission)
     }
 }
@@ -131,7 +131,7 @@ public protocol PermissionSetDelegate: class {
      - parameter permissionSet: The permission set containing the requested permission.
      - parameter permission:    The requested permission.
      */
-    func permissionSet(_ permissionSet: PermissionSet, didRequestPermission permission: Permission)
+    func permissionSet(_ permissionSet: PermissionSet, didRequestPermission permission: DebPermission)
     
     /**
      Tells the delegate that the specified permission will be requested.
@@ -139,7 +139,7 @@ public protocol PermissionSetDelegate: class {
      - parameter permissionSet: The permission set containing the requested permission.
      - parameter permission:    The requested permission.
      */
-    func permissionSet(_ permissionSet: PermissionSet, willRequestPermission permission: Permission)
+    func permissionSet(_ permissionSet: PermissionSet, willRequestPermission permission: DebPermission)
 }
 
 public extension PermissionSetDelegate {
@@ -149,7 +149,7 @@ public extension PermissionSetDelegate {
      - parameter permissionSet: The permission set containing the requested permission.
      - parameter permission:    The requested permission.
      */
-    func permissionSet(_ permissionSet: PermissionSet, didRequestPermission permission: Permission) {}
+    func permissionSet(_ permissionSet: PermissionSet, didRequestPermission permission: DebPermission) {}
     
     /**
      Tells the delegate that the specified permission will be requested.
@@ -157,5 +157,5 @@ public extension PermissionSetDelegate {
      - parameter permissionSet: The permission set containing the requested permission.
      - parameter permission:    The requested permission.
      */
-    func permissionSet(_ permissionSet: PermissionSet, willRequestPermission permission: Permission) {}
+    func permissionSet(_ permissionSet: PermissionSet, willRequestPermission permission: DebPermission) {}
 }

@@ -26,12 +26,12 @@
 import CoreBluetooth
 
 internal let BluetoothManager = CBPeripheralManager(
-    delegate: Permission.bluetooth,
+    delegate: DebPermission.bluetooth,
     queue: nil,
     options: [CBPeripheralManagerOptionShowPowerAlertKey: false]
 )
 
-extension Permission {
+extension DebPermission {
     var statusBluetooth: PermissionStatus {
         switch CBPeripheralManager.authorizationStatus() {
         case .restricted: return .disabled
@@ -57,7 +57,7 @@ extension Permission {
     }
 }
 
-extension Permission: CBPeripheralManagerDelegate {
+extension DebPermission: CBPeripheralManagerDelegate {
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         UserDefaults.standard.stateBluetoothManagerDetermined = true
         UserDefaults.standard.statusBluetooth = statusBluetooth
@@ -71,7 +71,7 @@ extension Permission: CBPeripheralManagerDelegate {
 }
 
 extension CBPeripheralManager {
-    func request(_ permission: Permission) {
+    func request(_ permission: DebPermission) {
         guard case .poweredOn = state else { return }
         
         startAdvertising(nil)

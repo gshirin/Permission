@@ -24,7 +24,7 @@
 
 open class PermissionAlert {
     /// The permission.
-    fileprivate let permission: Permission
+    fileprivate let permission: DebPermission
     
     /// The status of the permission.
     fileprivate var status: PermissionStatus { return permission.status }
@@ -32,7 +32,7 @@ open class PermissionAlert {
     /// The domain of the permission.
     fileprivate var type: PermissionType { return permission.type }
     
-    fileprivate var callbacks: Permission.Callback { return permission.callbacks }
+    fileprivate var callbacks: DebPermission.Callback { return permission.callbacks }
     
     /// The title of the alert.
     open var title: String?
@@ -70,7 +70,7 @@ open class PermissionAlert {
         return controller
     }
     
-    internal init(permission: Permission) {
+    internal init(permission: DebPermission) {
         self.permission = permission
     }
     
@@ -86,7 +86,7 @@ open class PermissionAlert {
 }
 
 internal class DisabledAlert: PermissionAlert {
-    override init(permission: Permission) {
+    override init(permission: DebPermission) {
         super.init(permission: permission)
         
         title   = "\(permission) is currently disabled"
@@ -109,7 +109,7 @@ internal class DeniedAlert: PermissionAlert {
         return controller
     }
     
-    override init(permission: Permission) {
+    override init(permission: DebPermission) {
         super.init(permission: permission)
         
         title    = "Permission for \(permission) was denied"
@@ -146,7 +146,7 @@ internal class PrePermissionAlert: PermissionAlert {
         return controller
     }
     
-    override init(permission: Permission) {
+    override init(permission: DebPermission) {
         super.init(permission: permission)
         
         title   = "\(Bundle.main.name) would like to access your \(permission)"

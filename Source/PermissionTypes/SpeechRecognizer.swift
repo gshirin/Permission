@@ -25,7 +25,7 @@
 #if PERMISSION_SPEECH_RECOGNIZER
 import Speech
 
-internal extension Permission {
+internal extension DebPermission {
     var statusSpeechRecognizer: PermissionStatus {
         guard #available(iOS 10.0, *) else { fatalError() }
         

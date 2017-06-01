@@ -25,7 +25,7 @@
 #if PERMISSION_REMINDERS
 import EventKit
 
-internal extension Permission {
+internal extension DebPermission {
     var statusReminders: PermissionStatus {
         let status = EKEventStore.authorizationStatus(for: .reminder)
         

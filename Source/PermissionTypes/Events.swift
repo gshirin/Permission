@@ -25,7 +25,7 @@
 #if PERMISSION_EVENTS
 import EventKit
 
-internal extension Permission {
+internal extension DebPermission {
     var statusEvents: PermissionStatus {
         let status = EKEventStore.authorizationStatus(for: .event)
         

@@ -22,111 +22,111 @@
 // SOFTWARE.
 //
 
-open class Permission: NSObject {
+open class DebPermission: NSObject {
     public typealias Callback = (PermissionStatus) -> Void
 
     #if PERMISSION_CONTACTS
     /// The permission to access the user's contacts.
     @available(iOS 9.0, *)
-    open static let contacts = Permission(type: .contacts)
+    open static let contacts = DebPermission(type: .contacts)
     #endif
     
     #if PERMISSION_ADDRESS_BOOK
     /// The permission to access the user's address book. (Deprecated in iOS 9.0)
-    open static let addressBook = Permission(type: .addressBook)
+    open static let addressBook = DebPermission(type: .addressBook)
     #endif
     
     #if PERMISSION_LOCATION
     /// The permission to access the user's location when the app is in background.
-    open static let locationAlways = Permission(type: .locationAlways)
+    open static let locationAlways = DebPermission(type: .locationAlways)
     
     /// The permission to access the user's location when the app is in use.
-    open static let locationWhenInUse = Permission(type: .locationWhenInUse)
+    open static let locationWhenInUse = DebPermission(type: .locationWhenInUse)
     #endif
     
     #if PERMISSION_MICROPHONE
     /// The permission to access the microphone.
-    open static let microphone = Permission(type: .microphone)
+    open static let microphone = DebPermission(type: .microphone)
     #endif
     
     #if PERMISSION_CAMERA
     /// The permission to access the camera.
-    open static let camera = Permission(type: .camera)
+    open static let camera = DebPermission(type: .camera)
     #endif
     
     #if PERMISSION_PHOTOS
     /// The permission to access the user's photos.
-    open static let photos = Permission(type: .photos)
+    open static let photos = DebPermission(type: .photos)
     #endif
     
     #if PERMISSION_REMINDERS
     /// The permission to access the user's reminders.
-    open static let reminders = Permission(type: .reminders)
+    open static let reminders = DebPermission(type: .reminders)
     #endif
     
     #if PERMISSION_EVENTS
     /// The permission to access the user's events.
-    open static let events = Permission(type: .events)
+    open static let events = DebPermission(type: .events)
     #endif
     
     #if PERMISSION_BLUETOOTH
     /// The permission to access the user's bluetooth.
-    open static let bluetooth = Permission(type: .bluetooth)
+    open static let bluetooth = DebPermission(type: .bluetooth)
     #endif
     
     #if PERMISSION_MOTION
     /// The permission to access the user's motion.
-    open static let motion = Permission(type: .motion)
+    open static let motion = DebPermission(type: .motion)
     #endif
     
     #if PERMISSION_SPEECH_RECOGNIZER
     /// The permission to access the user's SpeechRecognizer.
     @available(iOS 10.0, *)
-    open static let speechRecognizer = Permission(type: .speechRecognizer)
+    open static let speechRecognizer = DebPermission(type: .speechRecognizer)
     #endif
     
     #if PERMISSION_MEDIA_LIBRARY
     /// The permission to access the user's MediaLibrary.
     @available(iOS 9.3, *)
-    open static let mediaLibrary = Permission(type: .mediaLibrary)
+    open static let mediaLibrary = DebPermission(type: .mediaLibrary)
     #endif
     
     #if PERMISSION_SIRI
     /// The permission to access the user's Siri.
     @available(iOS 10.0, *)
-    open static let siri = Permission(type: .siri)
+    open static let siri = DebPermission(type: .siri)
     #endif
 
     #if PERMISSION_NOTIFICATIONS
     /// The permission to send notifications.
-    open static let notifications: Permission = {
+    open static let notifications: DebPermission = {
         let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
-        return Permission(type: .notifications(settings))
+        return DebPermission(type: .notifications(settings))
     }()
     
     /// Variable used to retain the notifications permission.
-    fileprivate static var _notifications: Permission?
+    fileprivate static var _notifications: DebPermission?
     
     /// The permission to send notifications.
-    open static func notifications(types: UIUserNotificationType, categories: Set<UIUserNotificationCategory>?) -> Permission {
+    open static func notifications(types: UIUserNotificationType, categories: Set<UIUserNotificationCategory>?) -> DebPermission {
         let settings   = UIUserNotificationSettings(types: types, categories: categories)
-        let permission = Permission(type: .notifications(settings))
+        let permission = DebPermission(type: .notifications(settings))
         _notifications = permission
         return permission
     }
     
     /// The permission to send notifications.
-    open static func notifications(types: UIUserNotificationType) -> Permission {
+    open static func notifications(types: UIUserNotificationType) -> DebPermission {
         let settings   = UIUserNotificationSettings(types: types, categories: nil)
-        let permission = Permission(type: .notifications(settings))
+        let permission = DebPermission(type: .notifications(settings))
         _notifications = permission
         return permission
     }
     
     /// The permission to send notifications.
-    open static func notifications(categories: Set<UIUserNotificationCategory>?) -> Permission {
+    open static func notifications(categories: Set<UIUserNotificationCategory>?) -> DebPermission {
         let settings  = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: categories)
-        let permission = Permission(type: .notifications(settings))
+        let permission = DebPermission(type: .notifications(settings))
         _notifications = permission
         return permission
     }
@@ -373,7 +373,7 @@ open class Permission: NSObject {
     }
 }
 
-extension Permission {
+extension DebPermission {
     /// The textual representation of self.
     override open var description: String {
         return type.description

@@ -25,7 +25,7 @@
 #if PERMISSION_CAMERA
 import AVFoundation
 
-internal extension Permission {
+internal extension DebPermission {
     var statusCamera: PermissionStatus {
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         

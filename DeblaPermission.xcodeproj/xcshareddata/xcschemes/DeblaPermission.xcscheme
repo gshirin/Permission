@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
-               BuildableName = "Permission.framework"
+               BuildableName = "DeblaPermission.framework"
                BlueprintName = "DeblaPermission"
                ReferencedContainer = "container:DeblaPermission.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D86A9BB1BEBDC7D00E3DD5A"
-               BuildableName = "Permission.xctest"
+               BuildableName = "DeblaPermission.xctest"
                BlueprintName = "DeblaPermissionTests"
                ReferencedContainer = "container:DeblaPermission.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
-            BuildableName = "Permission.framework"
+            BuildableName = "DeblaPermission.framework"
             BlueprintName = "DeblaPermission"
             ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
-            BuildableName = "Permission.framework"
+            BuildableName = "DeblaPermission.framework"
             BlueprintName = "DeblaPermission"
             ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D86A9B11BEBDC7C00E3DD5A"
-            BuildableName = "Permission.framework"
+            BuildableName = "DeblaPermission.framework"
             BlueprintName = "DeblaPermission"
             ReferencedContainer = "container:DeblaPermission.xcodeproj">
          </BuildableReference>

@@ -25,7 +25,7 @@
 #if PERMISSION_CONTACTS
 import Contacts
 
-internal extension Permission {
+internal extension DebPermission {
     var statusContacts: PermissionStatus {
         guard #available(iOS 9.0, *) else { fatalError() }
         

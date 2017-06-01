@@ -25,7 +25,7 @@
 open class PermissionButton: UIButton {
 
     /// The permission of the button.
-    open let permission: Permission
+    open let permission: DebPermission
     
     /// The permission domain of the button.
     open var domain: PermissionType { return permission.type }
@@ -64,7 +64,7 @@ open class PermissionButton: UIButton {
     
     - returns: A newly created button.
     */
-    public init(_ permission: Permission) {
+    public init(_ permission: DebPermission) {
         self.permission = permission
         
         super.init(frame: .zero)
